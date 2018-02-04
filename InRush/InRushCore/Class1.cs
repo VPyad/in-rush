@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace InRushCore
 {
-    public class Class1
+    class Class1
     {
+        public void Test()
+        {
+        }
     }
 }

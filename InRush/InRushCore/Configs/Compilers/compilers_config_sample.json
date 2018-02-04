@@ -1,0 +1,126 @@
+﻿{
+  "compilers": [
+    {
+      "name": ".Net",
+      "lang": "c#",
+      "invocation": "dotnet",
+      "version": "--version",
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "new console",
+        "#copy",
+        "clean",
+        "build",
+        "run",
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "GCC",
+      "lang": "c++",
+      "invocation": "g++",
+      "version": "--version",
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program.cpp",
+        "./a", // Linux: ./a.out
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "GCC",
+      "lang": "c",
+      "invocation": "g++",
+      "version": "--version",
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program.c",
+        "./a",
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "FPC",
+      "lang": "Pascal Delphi",
+      "invocation": "fpc",
+      "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program -Mdelphi",
+        "./program", // Linux: ./program
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "FPC",
+      "lang": "Object Pascal",
+      "invocation": "fpc",
+      "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program -Mobjfpc",
+        "./program", // Linux: ./program
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "FPC",
+      "lang": "Free Pascal",
+      "invocation": "fpc",
+      "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program",
+        "./program", // Linux: ./program
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "Javac",
+      "lang": "Java",
+      "invocation": "javac",
+      "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "program.java",
+        "#execute [!WL: java program]",
+        "#read_output"
+      ],
+      "timeout": "10000"
+    },
+    {
+      "name": "Go",
+      "lang": "Go",
+      "invocation": "go",
+      "version": "version", // Linux: "The program 'fpc' is ..." || Windows: ""
+      "commands": [
+        "#cd",
+        "rm -r *",
+        "#copy",
+        "build",
+        "./golang",
+        "#read_output"
+      ],
+      "timeout": "10000"
+    }
+  ]
+}
