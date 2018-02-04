@@ -8,14 +8,12 @@ namespace InRushCore.Compilers
     {
         IEnumerable<SupportedCompilers> GetSupportedCompilers();
 
-        bool AddCompiler(SupportedCompilers compiler);
+        void AddCompiler(SupportedCompilers compiler);
 
-        bool DeleteCompiler(SupportedCompilers compiler);
+        void DeleteCompiler(string id);
 
-        bool DeleteCompiler(string compilerName);
+        void UpdateCompiler(string id, SupportedCompilers compiler);
 
-        bool UpdateCompiler(string compilerName, SupportedCompilers compiler);
-
-        SupportedCompilers GetCompiler(string compilerName);
+        SupportedCompilers GetCompiler(string id);
     }
 }

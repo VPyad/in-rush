@@ -85,7 +85,7 @@
     {
       "name": "FPC",
       "lang": "Free Pascal",
-      "id":  "FPC Free Pascal",
+      "id": "FPC Free Pascal",
       "invocation": "fpc",
       "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
       "commands": [
