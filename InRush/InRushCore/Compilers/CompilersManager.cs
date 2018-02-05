@@ -27,7 +27,7 @@ namespace InRushCore.Compilers
             CompilersConfigHelper.ValidateCompilerObject(compiler);
 
             if (JsonConfig["compilers"].Where(x => (string)x["id"] == compiler.Id).FirstOrDefault() != null)
-                throw new Exception($"Compiler with id: {compiler.Id} already existed");
+                throw new ArgumentException($"Compiler with id: {compiler.Id} already existed");
 
             JObject json = (JObject)JsonConfig.DeepClone();
             JObject compilerJson = CompilersConfigHelper.GenerateCompilerJson(compiler);
@@ -40,7 +40,7 @@ namespace InRushCore.Compilers
         public void DeleteCompiler(string id)
         {
             if (JsonConfig["compilers"].Where(x => (string)x["id"] == id).FirstOrDefault() == null)
-                throw new Exception($"Compiler with id: {id} does not existed");
+                throw new ArgumentException($"Compiler with id: {id} does not existed");
 
             var json = JsonConfig.DeepClone();
             json["compilers"].Where(x => (string)x["id"] == id).FirstOrDefault().Remove();
@@ -64,7 +64,7 @@ namespace InRushCore.Compilers
                            };
 
             if (compiler.FirstOrDefault() == null)
-                throw new Exception("Compiler with provided id not found");
+                throw new ArgumentException("Compiler with provided id not found");
 
             return compiler.FirstOrDefault();
         }
@@ -91,7 +91,7 @@ namespace InRushCore.Compilers
             CompilersConfigHelper.ValidateCompilerObject(compiler);
 
             if (JsonConfig["compilers"].Where(x => (string)x["id"] == compiler.Id).FirstOrDefault() == null)
-                throw new Exception($"Compiler with id: {compiler.Id} does not existed");
+                throw new ArgumentException($"Compiler with id: {compiler.Id} does not existed");
 
             var newCompoler = CompilersConfigHelper.GenerateCompilerJson(compiler);
 
