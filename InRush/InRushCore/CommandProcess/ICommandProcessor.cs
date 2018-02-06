@@ -6,5 +6,6 @@ namespace InRushCore.CommandProcess
 {
     public interface ICommandProcessor
     {
+        CommandProcessResult Process(CommandProcessInput commandProcessInput);
     }
 }
