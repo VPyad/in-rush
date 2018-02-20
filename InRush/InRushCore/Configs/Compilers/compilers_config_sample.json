@@ -1,4 +1,5 @@
 ﻿{
+  "ram_limit_process" : "100000", //in kb
   "compilers": [
     {
       "name": ".Net",
@@ -29,7 +30,7 @@
         "rm -r *",
         "#copy",
         "program.cpp",
-        "./a", // Linux: ./a.out
+        "#execute [!Linux: ./a.out], [!Windows: ./a]", // limit RAM: (ulimit -v 150000; ./a.out) (linux)
         "#read_output"
       ],
       "timeout": "10000"
@@ -45,7 +46,7 @@
         "rm -r *",
         "#copy",
         "program.c",
-        "./a",
+        "#execute [!Linux: ./a.out], [!Windows: ./a]",
         "#read_output"
       ],
       "timeout": "10000"
@@ -61,7 +62,7 @@
         "rm -r *",
         "#copy",
         "program -Mdelphi",
-        "./program", // Linux: ./program
+        "#execute [!WL: ./program]", // Linux: ./program
         "#read_output"
       ],
       "timeout": "10000"
@@ -77,7 +78,7 @@
         "rm -r *",
         "#copy",
         "program -Mobjfpc",
-        "./program", // Linux: ./program
+        "#execute [!WL: ./program]", // Linux: ./program
         "#read_output"
       ],
       "timeout": "10000"
@@ -85,15 +86,15 @@
     {
       "name": "FPC",
       "lang": "Free Pascal",
-      "id":  "FPC Free Pascal",
+      "id": "FPC Free Pascal",
       "invocation": "fpc",
       "version": "-version", // Linux: "The program 'fpc' is ..." || Windows: ""
       "commands": [
         "#cd",
         "rm -r *",
         "#copy",
-        "program",
-        "./program", // Linux: ./program
+        "program.java",
+        "#execute [!WL: ./program]", // Linux: ./program
         "#read_output"
       ],
       "timeout": "10000"
@@ -125,7 +126,7 @@
         "rm -r *",
         "#copy",
         "build",
-        "./golang",
+        "#execute [!WL: ./golang]",
         "#read_output"
       ],
       "timeout": "10000"
